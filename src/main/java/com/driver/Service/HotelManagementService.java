@@ -27,7 +27,7 @@ public class HotelManagementService {
     {
         List<String> hotelsList = hotelManagementRepository.allHotels();
 
-        String hotelName = null;
+        String hotelName = "";
         int noOFFacilities = Integer.MIN_VALUE;
 
         for(String name : hotelsList)
@@ -58,7 +58,7 @@ public class HotelManagementService {
             {
                 return hotelName;
             }
-            else i++;
+             i++;
         }
 
         if(hotelName.length() > name.length()) return name;
