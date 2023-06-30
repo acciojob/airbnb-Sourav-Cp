@@ -29,7 +29,7 @@ public class HotelManagementService {
         List<String> hotelsList = hotelManagementRepository.allHotels();
 
         String hotelName = "";
-        int noOFFacilities = Integer.MIN_VALUE;
+        int noOFFacilities = 0;
 
         for(String name : hotelsList)
         {
