@@ -104,4 +104,28 @@ public class HotelManagementService {
         }
         return cnt;
     }
+
+    public Hotel updateFacilities(List<Facility> facilities , String hotelName)
+    {
+        Hotel hotel = hotelManagementRepository.getHotel(hotelName);
+        List<Facility> facilityList = hotel.getFacilities();
+
+        for(Facility facility : facilities)
+        {
+
+            boolean flag = false;
+
+            for (Facility facility1 : facilityList)
+            {
+                if(facility.equals(facility1))
+                {
+                    flag = true;
+                    break;
+                }
+            }
+            if(flag == false)facilityList.add(facility);
+        }
+        hotel.setFacilities(facilityList);
+        return hotel;
+    }
 }

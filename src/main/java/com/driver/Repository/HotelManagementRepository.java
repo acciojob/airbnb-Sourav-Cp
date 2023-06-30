@@ -69,4 +69,9 @@ public class HotelManagementRepository {
     {
         return new ArrayList<>(bookingMap.values());
     }
+
+    public Hotel getHotel(String hotelName)
+    {
+        return hotelMap.get(hotelName);
+    }
 }
