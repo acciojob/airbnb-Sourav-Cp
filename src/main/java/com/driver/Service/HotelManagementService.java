@@ -125,7 +125,7 @@ public class HotelManagementService {
             }
             if(flag == false)facilityList.add(facility);
         }
-        hotel.setFacilities(facilityList);
+        hotelManagementRepository.updateHotel(facilityList,hotelName);
         return hotel;
     }
 }

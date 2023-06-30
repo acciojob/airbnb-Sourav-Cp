@@ -74,4 +74,10 @@ public class HotelManagementRepository {
     {
         return hotelMap.get(hotelName);
     }
+    public void updateHotel(List<Facility> facilities ,String hotelName)
+    {
+        Hotel hotel = hotelMap.get(hotelName);
+        hotel.setFacilities(facilities);
+        hotelMap.put(hotelName,hotel);
+    }
 }
