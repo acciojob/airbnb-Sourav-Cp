@@ -23,6 +23,7 @@ public class HotelManagementService {
     {
         return hotelManagementRepository.addUser(user);
     }
+
     public String getHotelWithMostFacilities()
     {
         List<String> hotelsList = hotelManagementRepository.allHotels();
@@ -39,32 +40,17 @@ public class HotelManagementService {
                 noOFFacilities = facilities.size();
             }
             else if (noOFFacilities == facilities.size()) {
-                hotelName = select(hotelName,name);
+               if(name.compareTo(hotelName) < 0)
+               {
+                   hotelName = name;
+               }
             }
         }
         return hotelName;
     }
 
-    public String select(String hotelName,String name)
-    {
-        int i = 0;
-        while(i < hotelName.length() && i < name.length())
-        {
-            if(hotelName.charAt(i) > name.charAt(i))
-            {
-                return  name;
-            }
-            else if(name.charAt(i) > hotelName.charAt(i))
-            {
-                return hotelName;
-            }
-             i++;
-        }
 
-        if(hotelName.length() > name.length()) return name;
 
-        return hotelName;
-    }
 
     public int bookARoom(Booking booking)
     {
